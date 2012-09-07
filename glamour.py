@@ -50,7 +50,7 @@ class glamour:
         previous_version_hash = self.get_version_hash_from_version_number(str(self.get_current_app_version()-1))
 
         try:
-            versions_data = yaml.load(urllib2.urlopen(self.get_http_url("releases.yml")))
+            versions_data = yaml.load(urllib2.urlopen(self.get_https_url("releases.yml")))
         except urllib2.HTTPError:
             return ""
 
@@ -124,12 +124,12 @@ class glamour:
 
         contents = contents.replace("$TITLE", "Version " + str(self.get_current_app_version()))
         contents = contents.replace("$APP_NAME", glamour_settings["app_name"])
-        contents = contents.replace("$APPCAST_LINK", self.get_http_url("appcast.xml"))
-        contents = contents.replace("$RELEASE_NOTES_LINK", self.get_http_url("release_notes.html"))
+        contents = contents.replace("$APPCAST_LINK", self.get_https_url("appcast.xml"))
+        contents = contents.replace("$RELEASE_NOTES_LINK", self.get_https_url("release_notes.html"))
         contents = contents.replace("$DESCRIPTION", "Updated to version " + str(self.get_current_app_version()))
         contents = contents.replace("$PUBLISH_DATE", str(datetime.datetime.now()))
         contents = contents.replace("$VERSION", str(self.get_current_app_version()))
-        contents = contents.replace("$URL", self.get_http_url(self.get_zipfile_name()))
+        contents = contents.replace("$URL", self.get_https_url(self.get_zipfile_name()))
         return contents
         
 
@@ -206,7 +206,7 @@ class glamour:
 
     def get_versions_data(self):
         try:
-            versions_data = yaml.load(urllib2.urlopen(self.get_http_url("releases.yml")))
+            versions_data = yaml.load(urllib2.urlopen(self.get_https_url("releases.yml")))
         except urllib2.HTTPError:
             return {str(self.get_current_app_version()): {"head": self.get_current_head_id(), "date": str(datetime.datetime.now()), "human_version": self.get_human_version(self.get_current_app_version())}}
 
@@ -247,7 +247,7 @@ class glamour:
     def get_working_path(self, file_path):
         return working_directory + "/" + file_path
 
-    def get_http_url(self, file_name):
+    def get_https_url(self, file_name):
         return glamour_settings["https_base_url"] + "/" +file_name
 
     def get_sftp_directory(self, file_name):
