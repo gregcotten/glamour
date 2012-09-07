@@ -242,7 +242,7 @@ class glamour:
         return "b"+str(version)
 
     def get_support_files_path(self, file_path):
-        return script_directory + "/" + file_path
+        return script_directory + "/support_files/" + file_path
 
     def get_working_path(self, file_path):
         return working_directory + "/" + file_path
