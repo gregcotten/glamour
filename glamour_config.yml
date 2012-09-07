@@ -1,0 +1,11 @@
+git_repo_path: /Users/gregcotten/Documents/Coding/Example
+built_app_path: /Users/gregcotten/Library/Developer/Xcode/DerivedData/Example-ezzmdsegayzklhhkdxmazgrejaoh/Build/Products/Debug/Example.app
+https_base_url: https://url.com/path/to/example
+
+app_name: LightPaint
+
+sftp_host: example.com
+sftp_port: 22
+sftp_username: gregcott
+sftp_password: 
+sftp_appcast_directory: /home/gregcott/public_html/example
