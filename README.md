@@ -10,7 +10,7 @@ You will need to install the some wonderful 3rd-party python modules:
 
 ## Usage
 
-For the moment just run:
+For the moment just setup glamour_config.yml and run:
 
 	python glamour.py
 
