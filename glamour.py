@@ -90,7 +90,7 @@ class glamour:
         versions_data = self.get_versions_data()
         release_notes_temp_file = open(self.get_working_path("release_notes.html"), 'w')
 
-        release_notes_template_file = open(self.get_script_path("release_notes.template.html"), 'rU')
+        release_notes_template_file = open(self.get_support_files_path("release_notes.template.html"), 'rU')
         release_notes_template_data = ""
         for line in release_notes_template_file.readlines():
             release_notes_template_data += line
@@ -116,13 +116,15 @@ class glamour:
 
 
     def get_appcast_data(self):
-        appcast_template_file = open(self.get_script_path("/appcast.template.xml"), "rU")
+        appcast_template_file = open(self.get_support_files_path("/appcast.template.xml"), "rU")
         contents = ""
         for line in appcast_template_file.readlines():
             contents += line
         appcast_template_file.close()
 
         contents = contents.replace("$TITLE", "Version " + str(self.get_current_app_version()))
+        contents = contents.replace("$APP_NAME", glamour_settings["app_name"])
+        contents = contents.replace("$APPCAST_LINK", self.get_http_url("appcast.xml"))
         contents = contents.replace("$RELEASE_NOTES_LINK", self.get_http_url("release_notes.html"))
         contents = contents.replace("$DESCRIPTION", "Updated to version " + str(self.get_current_app_version()))
         contents = contents.replace("$PUBLISH_DATE", str(datetime.datetime.now()))
@@ -173,7 +175,7 @@ class glamour:
         
         repo = self.get_git_repo()
         this_partial = ""
-        partial_reference = open(self.get_script_path("release_notes.version.template.html"), 'r')
+        partial_reference = open(self.get_support_files_path("release_notes.version.template.html"), 'r')
         for line in partial_reference.readlines():
             this_partial += line
 
@@ -239,7 +241,7 @@ class glamour:
     def get_human_version(self, version):
         return "b"+str(version)
 
-    def get_script_path(self, file_path):
+    def get_support_files_path(self, file_path):
         return script_directory + "/" + file_path
 
     def get_working_path(self, file_path):
