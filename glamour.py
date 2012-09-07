@@ -116,7 +116,7 @@ class glamour:
 
 
     def get_appcast_data(self):
-        appcast_template_file = open(self.get_support_files_path("/appcast.template.xml"), "rU")
+        appcast_template_file = open(self.get_support_files_path("appcast.template.xml"), "rU")
         contents = ""
         for line in appcast_template_file.readlines():
             contents += line
