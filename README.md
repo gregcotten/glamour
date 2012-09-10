@@ -1,6 +1,6 @@
 # glamour
 
-This will zip up, appcast, generate git commit release notes, maintain a version database, and upload via SFTP your [Sparkle.framework](https://github.com/andymatuschak/Sparkle) enabled mac apps.
+This will zip up, appcast, generate git commit release notes, maintain a version database, and upload via SFTP your [Sparkle.framework](https://github.com/andymatuschak/Sparkle) enabled Mac apps.
 
 ## Installation
 
