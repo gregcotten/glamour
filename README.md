@@ -1,6 +1,6 @@
 # glamour
 
-TODO: Real description
+This will zip up, appcast, generate git commit release notes, and maintain a version database for your [Sparkle.framework](https://github.com/andymatuschak/Sparkle) enabled mac apps.
 
 ## Installation
 
