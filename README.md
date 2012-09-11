@@ -16,7 +16,7 @@ For the moment just setup glamour_config.yml and run:
 
 ## Notes on Usage
 
-As of Sparkle.framework 1.5 you must host your files on an HTTPS server. Many hosts offer a shared SSL host for free - ask your web hosting company!
+As of Sparkle.framework 1.5 you must host your files on an HTTPS server. Many hosts offer a shared SSL certificate for free - ask your web hosting company!
 
 ## The Future
 
