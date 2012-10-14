@@ -69,7 +69,7 @@ class glamour:
                 issue_exists = True
 
         if issue_exists:
-            if raw_input("Are you sure you want to continue? (y/n) ").lower() == "n":
+            if raw_input("Are you sure you want to continue? (y/n) ").lower()[0] == "n":
                 self.clean_local()
                 sys.exit(0)
         
